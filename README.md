@@ -28,4 +28,10 @@ npm run typecheck
 npm run build
 ```
 
-The first vertical slice covers trip CRUD, destinations, day-by-day planning, and generic itinerary records. The follow-on UI covers category labels and confirmation references, optional activity filtering/randomization, and loyalty records. Live providers, authentication, maps, and true offline synchronization remain intentionally deferred.
+The current client is organized into an Overview, Destinations, Days In Motion, Optional Activities, and Travel Details workspace. Destinations explain their role and link naturally into day planning. Days In Motion supports timeline and daily pseudo-calendar views. Travel records use category-specific fields for lodging, airfare, ground transportation, transfers, and activities while retaining a shared base contract.
+
+Each trip also has a Travelers page that is the source of truth for names, preferred names, contact information, and notes. Travelers can be selected on flight legs and other travel records; flight legs retain their own traveler and seat assignments.
+
+Optional activities use an estimated duration but do not ask users to enter commute time; commute is reserved for a later location-aware calculation. The API uses explicit SQLite column lists for optional activities so schema changes cannot silently create positional value-count failures.
+
+Live providers, authentication, traveler roster links, structured address persistence, maps, AI extraction, budgeting, expenses, photos, social publishing, and true offline synchronization remain deferred. The next foundation milestone should add travelers and structured locations before connecting an approval-based AI extraction workflow.
