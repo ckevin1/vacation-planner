@@ -1,0 +1,8 @@
+{
+  "name": "@vacation-planner/shared",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "build": "tsc -p tsconfig.json", "typecheck": "tsc -p tsconfig.json", "test": "vitest run" },
+  "dependencies": { "zod": "^3.25.76" }
+}
